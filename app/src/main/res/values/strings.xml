@@ -9,4 +9,7 @@
     <string name="name_hint">Nombre</string>
     <string name="register_button_text">Registrar</string>
     <string name="login_button_text">login</string>
+    <string name="consultar_productos">Catalogo</string>
+    <string name="consultar_stock">Stock</string>
+
 </resources>
