@@ -44,7 +44,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="364dp"
             android:padding="50dp">
 
             <EditText
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="@string/name_hint"/>
+                android:hint="@string/name_hint" />
 
             <EditText
                 android:id="@+id/editTextEmail"
@@ -85,11 +85,10 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/editTextPassword"
-                android:backgroundTint="@color/blue_light"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="120dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/blue_light"
                 android:text="@string/login_button_text" />
-
 
 
         </RelativeLayout>
