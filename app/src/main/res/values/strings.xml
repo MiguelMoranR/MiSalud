@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MiSalud</string>
+    <string name="registration_title">Estás en la zona de registro</string>
+    <string name="login_title">Inicio de sesión</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar</string>
+    <string name="register_button">Registrar</string>
+    <string name="name_hint">Nombre</string>
+    <string name="register_button_text">Registrar</string>
+    <string name="login_button_text">login</string>
+</resources>
