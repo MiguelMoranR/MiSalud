@@ -5,66 +5,84 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".MainActivity">
+
 
 
     <ImageView
-        android:id="@+id/imageViewCruz"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:id="@+id/cruz"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:src="@drawable/cruz"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <EditText
+        android:id="@+id/etlNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cruz" />
+
+
+
+    <EditText
+        android:id="@+id/etlprecio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/consultarPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etlNombre" />
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/eliminar_productos"
+        app:layout_constraintEnd_toEndOf="@+id/etlprecio"
+        app:layout_constraintStart_toStartOf="@+id/etlprecio"
+        app:layout_constraintTop_toBottomOf="@+id/etlprecio" />
+    <TextView
+        android:id="@+id/tvDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Stock"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btnMostrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+    <Button
+        android:id="@+id/btnMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/consultar_productos"
+        app:layout_constraintEnd_toEndOf="@+id/btnAgregar"
+        app:layout_constraintStart_toStartOf="@+id/btnAgregar"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregar" />
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="100dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewCruz">
+        app:layout_constraintTop_toBottomOf="@+id/tvDatabase" />
 
 
-    <Button
-        android:id="@+id/btn_catalogo"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/white"
-        android:text="@string/consultar_productos"
-        android:textColor="@color/blue_dark"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        app:icon="@drawable/productos"
-        app:iconPadding="0dp"
-        app:iconSize="30dp"
-        app:iconTint="@color/blue_dark"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="310dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewCruz" />
 
-
-    <Button
-        android:id="@+id/btn_Stock"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/white"
-        android:text="@string/consultar_stock"
-        android:textColor="@color/blue_dark"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        app:icon="@drawable/six"
-        app:iconPadding="0dp"
-        app:iconSize="30dp"
-        app:iconTint="#FA7878"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="411dp"
-        app:layout_constraintTop_toBottomOf="@+id/btn_catalogo"/>
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

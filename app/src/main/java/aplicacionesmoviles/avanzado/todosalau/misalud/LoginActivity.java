@@ -76,8 +76,9 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             Toast.makeText(LoginActivity.this, "Inicio de sesion exitoso", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            startActivity(intent);
+
+                           Intent intent1 = new Intent(LoginActivity.this, HomeActivity.class);
+                           startActivity(intent1);
                             finish();
 
                         } else {
