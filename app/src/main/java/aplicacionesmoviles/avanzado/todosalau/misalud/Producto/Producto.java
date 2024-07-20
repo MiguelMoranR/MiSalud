@@ -6,10 +6,10 @@ import java.util.Map;
 public class Producto {
     private String id;
     private String name;
-    private  double price;
+    private  String price;
     private  boolean deleted;
 
-    public Producto(String id, String name, double price) {
+    public Producto(String id, String name, String price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -19,7 +19,7 @@ public class Producto {
 
       }
 
-    public Producto(String name, double price) {
+    public Producto(String name, String price) {
         this.name = name;
         this.price = price;
     }
@@ -40,11 +40,11 @@ public class Producto {
         this.name = name;
     }
 
-    public int getPrice() {
-        return (int) price;
+    public String getPrice() {
+        return  price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

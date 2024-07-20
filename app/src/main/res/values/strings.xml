@@ -10,7 +10,7 @@
     <string name="register_button_text">Registrar</string>
     <string name="login_button_text">login</string>
     <string name="consultar_productos">Catalogo</string>
-    <string name="eliminar_productos">Eliminar</string>
+    <string name="eliminar_productos">Agregar Productos</string>
     <string name="Name">Nombre</string>
     <string name="consultarPrice">Precio</string>
     <string name="Stock">Stock</string>

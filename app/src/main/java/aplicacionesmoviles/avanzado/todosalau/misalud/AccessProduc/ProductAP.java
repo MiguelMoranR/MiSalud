@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +18,10 @@ public class ProductAP {
     public ProductAP(Context context){dbHelper = new DataBaseHelper(context);}
     public void cerrar (){dbHelper.close();}
     public void abrir (){db= dbHelper.getWritableDatabase();}
-    public Long insertarProduct(String nombre , Double price){
+    public Long insertarProduct(String nombre , String price){
         ContentValues Values = new ContentValues();
         Values.put("nombre", nombre);
-        Values.put(String.valueOf(price),price);
+        Values.put("Precio" ,price);
         return db.insert("productos",null,Values);
     }
     public List<Producto> obtnTodProductos(){
@@ -33,7 +32,7 @@ public class ProductAP {
                 Producto producto = new Producto();
                 producto.setId(String.valueOf(cursor.getInt(0)));
                 producto.setName(cursor.getString(1));
-                producto.setPrice(cursor.getDouble(2));
+                producto.setPrice(cursor.getString(2));
                 productos.add(producto);
             }
             while (cursor.moveToNext());
@@ -41,7 +40,7 @@ public class ProductAP {
         cursor.close();
         return productos;
     }
-    public void  actualizarProducto(int id ,String name , Double price){
+    public void  actualizarProducto(int id ,String name , String price){
         ContentValues values = new ContentValues();
         values.put("nombre", name);
         values.put("price", price);

@@ -37,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         etlNombre = findViewById(R.id.etlNombre);
         etlprice = findViewById(R.id.etlprecio);
         btnAgregar = findViewById(R.id.btnAgregar);
+        btnMostrar = findViewById(R.id.btnMostrar);
         listView = findViewById(R.id.listView);
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
                 agregarProducto();
             }
         });
-        btnMostrar.setOnClickListener(new View.OnClickListener() {
+      btnMostrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mostrarProductos();
@@ -94,8 +95,8 @@ public class HomeActivity extends AppCompatActivity {
         String nombre = etlNombre.getText().toString();
         String precio = etlprice.getText().toString();
         if (!nombre.isEmpty()&& !precio.isEmpty()){
-            long resultado= productAP.insertarProduct(nombre, Double.valueOf(precio));
-            if(resultado !=-1){
+            long resultado= productAP.insertarProduct(nombre, precio);
+            if(resultado !=1){
                 Toast.makeText(HomeActivity.this, "Producto Agregado exitosamente", Toast.LENGTH_SHORT).show();
                 etlNombre.setText("");
                 etlprice.setText("");
