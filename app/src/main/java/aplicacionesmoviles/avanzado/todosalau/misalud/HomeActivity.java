@@ -1,5 +1,7 @@
 package aplicacionesmoviles.avanzado.todosalau.misalud;
 
+import static android.view.View.FOCUS_BACKWARD;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
         etlprice = findViewById(R.id.etlprecio);
         btnAgregar = findViewById(R.id.btnAgregar);
         btnMostrar = findViewById(R.id.btnMostrar);
+       // btnMostrar btnListProducts = findViewById(R.id.listView);
         listView = findViewById(R.id.listView);
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
@@ -45,12 +48,18 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 agregarProducto();
             }
+
+
         });
       btnMostrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+               // String nombre = etlNombre.getText().toString();
+               // String precio= etlprice.getText().toString();
+               // productAP.insertarProduct(nombre , precio);
                 mostrarProductos();
-                btnMostrar.setVisibility(View.GONE);
+                btnMostrar.setVisibility(listView.GONE);
             }
         });
     }
@@ -70,9 +79,9 @@ public class HomeActivity extends AppCompatActivity {
                    Producto producto= productos.get(position);
                    etlNombre.setText(producto.getName());
                    etlprice.setText(producto.getPrice());
-                   int idProducto = Integer.parseInt(producto.getId());
+                   int idProducto =  producto.getId();
                   btnAgregar.setText("guardar");
-                  btnMostrar.setOnClickListener(new View.OnClickListener() {
+                  btnAgregar.setOnClickListener(new View.OnClickListener() {
                       @Override
                       public void onClick(View v) {
                           actualizarProducto(idProducto);
@@ -85,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
                @Override
                public void onDeleteClick(int position) {
                    Producto producto = productos.get(position);
-                   eliminarProducto(Integer.parseInt(producto.getId()));
+                   eliminarProducto(producto.getId());
                    adapter.notifyDataSetChanged();
                }
            });
@@ -95,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
         String nombre = etlNombre.getText().toString();
         String precio = etlprice.getText().toString();
         if (!nombre.isEmpty()&& !precio.isEmpty()){
-            long resultado= productAP.insertarProduct(nombre, precio);
+            long resultado= productAP.insertarProduct(nombre, Float.valueOf(precio));
             if(resultado !=1){
                 Toast.makeText(HomeActivity.this, "Producto Agregado exitosamente", Toast.LENGTH_SHORT).show();
                 etlNombre.setText("");
@@ -112,7 +121,17 @@ public class HomeActivity extends AppCompatActivity {
         String nombre = etlNombre.getText().toString();
         String precio = etlprice.getText().toString();
         if (!nombre.isEmpty()&& !precio.isEmpty()){
+            productAP.actualizarProducto(idUsuario,nombre,precio);
             Toast.makeText(HomeActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            etlNombre.setText(" ");
+            etlprice.setText("");
+            btnAgregar.setText("Agregar");
+            btnAgregar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    agregarProducto();
+                }
+            });
         }
         actualizarListaProducto();
     }
