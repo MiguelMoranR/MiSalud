@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MiSalud"
         tools:targetApi="31">
         <activity
+            android:name=".ListProductoActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
@@ -20,9 +23,6 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity_login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
